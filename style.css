@@ -18,16 +18,16 @@ h1 {
     text-shadow: 2px 2px 4px #000000; /* Adiciona uma sombra ao texto */
 }
 
-h2 {
-    text-align: center;
-}
-
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+
+    h2 {
+        text-align: center;
+    }
 }
 
 /* Estilo para o corpo da página */
@@ -39,11 +39,11 @@ body {
     display: flex;
     flex-direction: column; /* Organiza o conteúdo verticalmente */
     padding: 0;
+    padding: 0 20px;
 }
 
 main {
     width: 100%;
-    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,17 +177,6 @@ section button.loading {
     color: #F5F7F8; /* Cor do texto */
     width: fit-content;
     margin-bottom: 1.5rem;
-}
-
-/* Estiliza os links dentro dos itens de resultado */
-.item-resultado a {
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
-    color: #cacaca; /* Cor do texto dos links */
-}
-
-/* Estiliza os links quando são passados o mouse sobre */
-.item-resultado a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
 /* Estiliza a descrição meta dentro dos itens de resultado */
