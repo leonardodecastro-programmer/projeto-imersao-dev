@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Importa a fonte Chakra Petch do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Estilo para o título h1 */
+h1 {
+    color: #E50914; /* Vermelho Netflix */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px #000000; /* Adiciona uma sombra ao texto */
+}
+
+h2 {
+    text-align: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Estilo para o corpo da página */
+body {
+    background-color: #141414; /* Preto Netflix */
+    color: #FFFFFF; /* Branco */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo verticalmente */
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estiliza as seções da página */
+section {
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.pesquisa {
+    width: 100%;
+}
+
+/* Estiliza os inputs dentro das seções */
+section input {
+    width: 100%;
+    max-width: 30rem; /* Largura dos inputs */
+    border: none; /* Remove a borda padrão */
+    padding: 1rem; /* Espaçamento interno */
+    border-radius: 1.5rem; /* Borda arredondada */
+    color: #45474B; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+
+/* Estiliza os botões dentro das seções */
+section button {
+    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 1.5rem; /* Borda arredondada */
+    color: #F5F7F8; /* Cor do texto do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    background-color: #55555533;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor do elemento */
+    font-weight: 600;
+    transition: all 0.3s ease-in-out; /* Adiciona uma transição suave para todas as propriedades, tanto na entrada quanto na saída */
+}
+
+/* Estiliza o botão quando o mouse passa por cima (hover) */
+section button:hover {
+    background-color: #007BFF; /* Muda a cor de fundo */
+    color: #FFFFFF; /* Muda a cor do texto */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao redor do botão */
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
+}
+
+
+/* Estiliza o botão quando está em loading */
+section button.loading {
+    opacity: 0.5;
+    color: #000000;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+/* Estiliza a caixa de resultados da pesquisa */
+.resultados-pesquisa {
+    max-width: 30rem;
+    width: 100%;
+    height: 60vh; /* Altura máxima da caixa de resultados */
+    overflow-y: auto;
+    margin-top: 1rem; /* Espaçamento acima da caixa de resultados */
+    border-radius: 0.6rem; /* Borda arredondada */
+}
+
+/* Estiliza cada item de resultado */
+.item-resultado {
+    width: 100%;
+    max-width: 30rem;
+    background: #111111e7; /* Cor de fundo dos itens, um preto um pouco mais escuro que o do body */
+    border-radius: 0.6rem; /* Borda arredondada */
+    padding: 1rem; /* Espaçamento interno */
+    box-shadow: 0 1px 5px rgba(128, 128, 128, 0.534); /* Adiciona uma sombra mais clara ao redor do elemento */
+    box-sizing: border-box; /* Garante que o padding esteja incluso no tamanho total */
+    border: 1px solid #969696; /* Borda cinza claro */
+    margin-bottom: 1rem;
+}
+
+.disponivel-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.disponivel {
+    background-color: #ffd278;
+    border: 3px solid #b38300;
+    border-radius: 0.6rem;
+    padding: 0.4rem;
+    width: fit-content;
+    color: #141414; /* Cor do texto */
+    font-weight: 600;
+    text-align: center;
+}
+
+.loading {
+    opacity: 0.5;
+    color: #000000;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.genero-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Estiliza os títulos dentro dos itens de resultado */
+.item-resultado h2 {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    color: #F5F7F8; /* Cor do texto */
+    width: fit-content;
+    margin-bottom: 1.5rem;
+}
+
+/* Estiliza os links dentro dos itens de resultado */
+.item-resultado a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: #cacaca; /* Cor do texto dos links */
+}
+
+/* Estiliza os links quando são passados o mouse sobre */
+.item-resultado a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estiliza a descrição meta dentro dos itens de resultado */
+.descricao-meta {
+    background-color: #2790ff;
+    border: 3px solid #002a55; /* Borda com um azul mais escuro que o fundo */
+    border-radius: 0.6rem;
+    padding: 0.4rem 0.8rem;
+    width:  fit-content;
+    color: #FFFFFF; /* Cor do texto */
+    font-weight: 600;
+    margin: 0;
+}
+
+footer {
+    background-color: #F5F7F8; /* Cor de fundo do rodapé */
+    color: #45474B; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 2rem; /* Espaçamento acima do rodapé */
+    padding: 1rem; /* Espaçamento interno */
+    width: 100%; /* Largura total da página */
+    font-size: 1rem; /* Tamanho da fonte */
+}
+
+/* Estilo adicional para elementos de rádio como botões */
+.radio-group {
+    display: flex;
+    gap: 8px;
+    margin: 2rem 0;
+}
+
+.radio-group div {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    display: none; /* Esconde o input de rádio */
+}
+
+.sem-resposta {
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    text-shadow: 1px 1px 2px #000000; /* Adiciona uma sombra ao texto */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.radio-group label {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    color: inherit;
+    background-color: #55555533;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor do elemento */
+    border-radius: 0.6rem;
+    cursor: pointer;
+    margin-left: 8px; /* Margem à esquerda */
+    transition: all 0.3s ease-in-out; /* Adiciona uma transição suave para todas as propriedades, tanto na entrada quanto na saída */
+}
+
+.radio-group label:hover {
+    background-color: #007BFF; /* Muda a cor de fundo */
+    color: #FFFFFF; /* Muda a cor do texto */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao redor do label */
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do label */
+}
+
+
+
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: #007BFF;
+    color: #FFFFFF;
+}

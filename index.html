@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>BuscaFlix</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>BuscaFlix</h1>
+            <h2>Seu buscador de filmes, séries e animes</h2>
+        </header>
+        <main>
+            <section class="pesquisa">
+                <input type="text" placeholder="Me fale sobre o personagem do filme" id="search" name="search">
+                
+                <div class="radio-group">
+                    <div>
+                        <input type="radio"  id="filmes" name="tipo" value="filmes">
+                        <label for="filmes">Filmes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="series" name="tipo" value="series">
+                        <label for="series">Séries</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="animes" name="tipo" value="animes">
+                        <label for="animes">Animes</label>
+                    </div>
+                </div>
+                
+                <button type="submit">Buscar</button>
+            </section>
+            <section class="resultados-pesquisa" id="resultados-pesquisa">
+            </section>
+        </main>
+        <footer>
+            <p>2024 - Leonardo de Castro. Todos os direitos reservados</p>
+            <p>Entre em contato pelo email: leonardo-programmer@proton.me</p>
+        </footer>
+        <script type="importmap">
+            {
+                "imports": {
+                    "@google/generative-ai": "https://esm.run/@google/generative-ai"
+                }
+            }
+        </script>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
